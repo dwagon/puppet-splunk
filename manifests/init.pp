@@ -353,6 +353,7 @@ class splunk (
     hasstatus  => $splunk::service_status,
     pattern    => $splunk::process,
     require    => Exec['splunk_create_service'],
+    provider   => 'init',
   }
 
   exec { 'splunk_create_service':
